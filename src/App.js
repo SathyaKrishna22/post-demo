@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import {
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+} from "@ant-design/icons";
+import { Layout, Menu } from "antd";
+import Login from "./components/login";
+import Posts from "./components/content";
+const { Header, Content, Footer, Sider } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Layout>
+        <Layout style={{ height: "calc(100vh-200px)", background: "white" }}>
+          <Header>
+            <div style={{ color: "white" }}>Refactor Academy</div>
+            <div style={{ position: "absolute", top: "1px", right: "20px" }}>
+              <Login />
+            </div>
+          </Header>
+          <Content
+            style={{
+              margin: "24px 16px 0",
+            }}
+          >
+            <div className="site-layout-background">
+              <Posts />
+            </div>
+          </Content>
+          <Footer
+            style={{
+              textAlign: "center",
+              position: "fixed",
+              bottom: 0,
+              width: "100vw",
+            }}
+          >
+            Refactor Academy ©2022 Created by SAAK
+          </Footer>
+        </Layout>
+      </Layout>
+    </>
   );
 }
 
